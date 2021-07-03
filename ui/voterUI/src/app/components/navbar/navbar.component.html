@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a href="#" class="navbar-brand" style="margin-left: 5px;">
+        <img src="assets/icons/post.png" height="28" alt="Voter"> Voter
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a href="#" class="nav-item nav-link" [ngClass]="{'active': activeNav == 'item-list'}"
+                (click)="setActiveNav('item-list')">Items</a>
+            <a class="nav-item nav-link link_cursor" routerLink="/add-item"
+                [ngClass]="{'active': activeNav == 'add-item'}" (click)="setActiveNav('add-item')">Add-Item</a>
+
+        </div>
+    </div>
+</nav>

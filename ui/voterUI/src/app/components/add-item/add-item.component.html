@@ -1,0 +1,25 @@
+<section>
+    
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Add New Item</h5>
+          Title<input type="text" class="form-control" [(ngModel)]="title">
+    
+    
+          Description<input type="text" class="form-control" [(ngModel)]="description">
+      
+          Price<input type="text" class="form-control" [(ngModel)]="price" pattern="((\d+)((\.\d{1,2})?))$" #txtPrice="ngModel">
+        <!--   <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a> -->
+          <hr>
+          <button class="btn btn-primary" (click)="saveItem()" [disabled]="!title||!price||txtPrice.errors?.pattern">Save</button>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="txtPrice.errors?.pattern" style="width: 18rem;">
+            <strong>Please enter valid price</strong>
+          </div>
+     </div>
+      
+</section>
+
