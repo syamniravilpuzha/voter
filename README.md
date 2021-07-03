@@ -1,6 +1,11 @@
 # voter
 User can create items, view items from DB, up-vote/down-vote for their fav items
 
+Prerequisites
+*****************
+1.Node.JS
+2.MongoDB Server
+
 To run the project do the following.
 
 1. Either clone the repo or download as zip.
