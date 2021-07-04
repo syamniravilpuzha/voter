@@ -13,7 +13,6 @@ class ItemController {
     * @param {*} res 
     */
     async saveItem(req, res) {
-        console.log("Entered in service");
         try {
             let item = req.body.data;
             let data = {
@@ -52,11 +51,9 @@ class ItemController {
         try {
             let id = req.params.id;
             let votes = req.body.vote;
-            console.log("input:", id, "<>", votes);
             let data = {
                 "response": await this.itemService.updateVote(id, votes)
             };
-            console.log("out:-", data);
             res.send(data);
         }
         catch (e) {

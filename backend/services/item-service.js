@@ -39,7 +39,6 @@ class ItemService {
         let item = new Items(data);
         return new Promise((resolve, reject) => {
             item.save().then((res) => {
-                console.log(res);
                 resolve(res);
             }).catch((err) => {
                 console.error(err);
