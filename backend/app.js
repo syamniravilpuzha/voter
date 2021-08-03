@@ -14,8 +14,15 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', itemRouter);
+
+// To let express know we are serving our angular app build to it
+app.use(express.static(path.join(__dirname, '../ui/voterUI/dist/voterUI/')));
+
+//Load entry point-index.html to express default root.
+app.get('/', (req,res) => {
+  res.sendFile(path.join(__dirname, '../ui/voterUI/dist/voterUI/index.html'));
+});
+app.use('/api', itemRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
